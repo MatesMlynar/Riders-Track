@@ -14,7 +14,7 @@ export const HeaderComponent = () => {
             }}>
 
             {/*layout*/}
-            <Container maxWidth="lg">
+            <Container maxWidth="xl">
 
                 {/*header content*/}
                 <Toolbar sx={{
