@@ -1,13 +1,15 @@
-import {Box, Container, Typography, ListItem, Button} from '@mui/material'; 
+import {Box, Container, Typography, ListItem, Button, Link} from '@mui/material'; 
 import CreateIcon from '@mui/icons-material/Create';
 
 export const MainHeaderComponent = () => 
 {
     {/*Main-header*/}
     return(
-        <Box sx={{
+        <Container maxWidth="xl">
+
+<Box sx={{
             padding: {
-                xs: "250px 24px 0 24px",
+                xs: "250px 12px 0 12px",
                 md: "250px 48px 0 48px"
             }
         }}>
@@ -98,12 +100,54 @@ export const MainHeaderComponent = () =>
             </Box>
 
                 
-                
+            {/* Main-header__download-container */}
+            
+            <Box sx={{position: "absolute", maxWidth: "930px", padding: "25px 25px 20px 25px", backgroundColor: "#fff", display: "flex", justifyContent: "space-between", left: "50%", bottom: "0", transform: "translateX(-50%)", width: "100%"}}> 
 
+                {/*Container - left side*/}
+                <Box>
+                    <Typography variant="h3" sx={{
+                        fontSize: {
+                        xs: 15,
+                        sm: 20,
+                    },
+                    color: "black",
+                    fontWeight: "700"
+                    }}> Stáhni si aplikaci do telefonu </Typography>
+
+                    <Typography sx={{color:"black"}}>
+                        <Box component="span" sx={{color: "secondary.main"}}>Doporučováno</Box>, umožnuje záznam a publikaci tras
+                    </Typography>
+                </Box>
+
+                {/*Container - right side*/}
+                <Box sx={{
+                    display: "flex",
+                    gap: "40px",
+                }}>
+
+                    <Link href="">
+                        <Box component="img" src="/images/others/android.png" sx={{maxWidth: "170px", maxHeight: "60px", height: "100%", width:"100%", display: "block"}} >
+                        </Box>
+                    </Link>
+                        
+                    <Link href=" ">
+                        <Box component="img" src="/images/others/ios.png" sx={{maxWidth: "170px", maxHeight: "60px", height: "100%", width:"100%", display: "block"}} >
+                        </Box>
+                    </Link>
+                    
+
+                </Box>
+
+
+            </Box>
 
 
         </Box>
 
+
+        </Container>
+        
 
 
     )
