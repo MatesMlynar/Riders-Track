@@ -1,13 +1,23 @@
 import {Box, Container, Typography, ListItem, Button, Link} from '@mui/material'; 
 import CreateIcon from '@mui/icons-material/Create';
+import { ChangeEventHandler, FC} from "react";
+import NextLink from 'next/link'
+import { useState, useEffect } from 'react';
 
-export const MainHeaderComponent = () => 
+export const MainHeaderComponent : FC<{}> = () => 
 {
+    const [visible, setVisible] = useState(false);
+
+    useEffect(() => {
+        setVisible(true);
+    }, [setVisible])
+
+
     {/*Main-header*/}
     return(
         <Container maxWidth="xl">
 
-<Box sx={{
+        <Box sx={{
             padding: {
                 xs: "250px 12px 0 12px",
                 md: "250px 48px 0 48px"
@@ -42,7 +52,9 @@ export const MainHeaderComponent = () =>
                 gap: "30px",
                 minHeight: "370px",
                 height: "100%",
-                maxWidth: "750px"
+                maxWidth: "750px",
+                opacity: visible ? 1 : 0,
+                transition: 'ease 0.5s'
             }}>
                 
                 <Typography variant='h1' sx={{
@@ -82,20 +94,28 @@ export const MainHeaderComponent = () =>
                     </ListItem>
                 </Box>
                 
-                {/*Main-header__button*/}
-                <Button variant="outlined" sx={{
+
+
+
+                {/*Main-header__link*/}
+
+                <Link href="/" sx={{
                     border: "1px solid #FFF",
                     color: "primary.light",
                     maxWidth: "227px",
                     width: "100%",
                     borderRadius: "0",
+                    padding: "10px 10px 10px 5px",
                     transition: "border 0.3s ease-out",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignContent: "center",
+                    textDecoration: "none",
                     "&:hover": {border: "1px solid #FF0000", }
                 }}>
-                
-                <CreateIcon sx={{marginRight:"10px", fontSize:"20px"}} /> 
-                ZAREGISTROVAT SE
-                </Button>
+                    <CreateIcon sx={{marginRight:"8px", marginTop: "2px", fontSize:"20px"}} /> 
+                   ZAREGISTROVAT SE
+                </Link>
 
             </Box>
 
@@ -126,12 +146,12 @@ export const MainHeaderComponent = () =>
                     gap: "40px",
                 }}>
 
-                    <Link href="">
+                    <Link href="/">
                         <Box component="img" src="/images/others/android.png" sx={{maxWidth: "170px", maxHeight: "60px", height: "100%", width:"100%", display: "block"}} >
                         </Box>
                     </Link>
                         
-                    <Link href=" ">
+                    <Link href="/">
                         <Box component="img" src="/images/others/ios.png" sx={{maxWidth: "170px", maxHeight: "60px", height: "100%", width:"100%", display: "block"}} >
                         </Box>
                     </Link>

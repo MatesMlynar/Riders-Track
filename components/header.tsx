@@ -1,7 +1,13 @@
 import * as React from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
-import {AppBar, Box, Toolbar, Typography, Button, IconButton, Link, Avatar, Paper, Container} from '@mui/material'
+import {AppBar, Box, Toolbar, Typography, Button, IconButton, Avatar, Paper, Container} from '@mui/material'
 import LoginIcon from '@mui/icons-material/Login';
+import NextLink from 'next/link'
+import Link from '@mui/material/Link';
+import { useState, useEffect } from 'react';
+
+
+
 
 export const HeaderComponent = () => {
     return(
@@ -37,17 +43,16 @@ export const HeaderComponent = () => {
                     </Link>
 
                     {/*login link*/}
-                    <Link href="/" style={{textDecoration: 'none'}}>
 
-                        <Box sx={{display: "flex", alignItems: "center"}}>
-                            <Box component="span" sx={{marginRight: "5px"}}>
+                    <Box sx={{display: "flex", alignItems: "center"}}>
+                        <Link href="/" style={{textDecoration: "none", display: "flex", alignItems: "center"}} component={NextLink} variant="body2">
+                            <Box component="span" sx={{marginRight: "5px", textDecoration: "none"}}>
                                 Přihlásit se
                             </Box>
                             <LoginIcon />
-                        </Box>
-
-                    </Link>
-                    
+                        </Link>
+                    </Box>
+                        
                 </Toolbar>
 
             </Container>

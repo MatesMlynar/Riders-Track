@@ -1,4 +1,10 @@
 import { ThemeOptions } from '@mui/material/styles';
+import NextLink from 'next/link';
+import { forwardRef } from 'react';
+
+const LinkBehaviour = forwardRef(function LinkBehaviour(props, ref) {
+    return <NextLink ref={ref} {...props} />;
+});
 
 const lightThemeOptions: ThemeOptions = {
     breakpoints: {
@@ -24,6 +30,18 @@ const lightThemeOptions: ThemeOptions = {
         fontFamily: "Segoe UI",
         h1: {
             fontWeight: "700"
+        }
+    },
+    components: {
+        MuiLink: {
+            defaultProps: {
+                component: LinkBehaviour
+            }
+        },
+        MuiButtonBase: {
+            defaultProps: {
+                LinkComponent: LinkBehaviour
+            }
         }
     }
 };
