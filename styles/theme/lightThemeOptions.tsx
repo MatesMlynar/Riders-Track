@@ -13,7 +13,7 @@ const lightThemeOptions: ThemeOptions = {
             sm: 650,
             md: 900,
             lg: 1200,
-            xl: 1536
+            xl: 1600
         },
     },
     palette: {
@@ -43,7 +43,15 @@ const lightThemeOptions: ThemeOptions = {
                 LinkComponent: LinkBehaviour
             }
         }
-    }
+    },
+    root: {
+        width: '100%',
+        marginTop: 0,
+        zIndex: 1,
+        height: '100%',
+        overflow: 'hidden',
+      },
+
 };
 
 export default lightThemeOptions;

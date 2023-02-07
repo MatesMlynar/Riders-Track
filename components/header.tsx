@@ -46,7 +46,7 @@ export const HeaderComponent = () => {
 
                     <Box sx={{display: "flex", alignItems: "center"}}>
                         <Link href="/" style={{textDecoration: "none", display: "flex", alignItems: "center"}} component={NextLink} variant="body2">
-                            <Box component="span" sx={{marginRight: "5px", textDecoration: "none"}}>
+                            <Box component="span" sx={{marginRight: "5px", textDecoration: "none", fontWeight: "bold"}}>
                                 Přihlásit se
                             </Box>
                             <LoginIcon />
