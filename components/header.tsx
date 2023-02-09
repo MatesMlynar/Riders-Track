@@ -45,7 +45,7 @@ export const HeaderComponent = () => {
                     {/*login link*/}
 
                     <Box sx={{display: "flex", alignItems: "center"}}>
-                        <Link href="/" style={{textDecoration: "none", display: "flex", alignItems: "center"}} component={NextLink} variant="body2">
+                        <Link href="/signIn" style={{textDecoration: "none", display: "flex", alignItems: "center"}} component={NextLink} variant="body2">
                             <Box component="span" sx={{marginRight: "5px", textDecoration: "none", fontWeight: "bold"}}>
                                 Přihlásit se
                             </Box>
