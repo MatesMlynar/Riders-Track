@@ -18,10 +18,14 @@ export const MainHeaderComponent : FC<{}> = () =>
             <Box sx={{
                 padding: {
                     md: "250px 48px 0 48px",
-                    lg: "200px 48px 0 48px",
-                    xl: "300px 48px 0 48px"
+                    lg: "300px 48px 0 48px",
                 },
-                height: "100%",
+                position: "relative",
+                height: {
+                    xs: "auto",
+                    md: "50vh",
+                    lg: "95%",
+                }
             }}>
                 {/* Main-header__figure */}
                 <Box sx={{
@@ -79,17 +83,18 @@ export const MainHeaderComponent : FC<{}> = () =>
                         position: "relative",
                         display: "flex",
                         flexDirection: "column",
-                        gap: "30px",
+                        gap: {xs: "30px",md: "50px"},
                         height: "100%",
                         opacity: visible ? 1 : 0,
                         transition: 'ease 0.5s',
+                        maxWidth: {lg:"860px", xl: "1000px"}
                     }}>
                         
                         <Typography variant='h1' sx={{
                             fontSize: {
                                 xs: 22,
-                                sm: 30,
-                                xl: 35
+                                sm: 33,
+                                xl: 42
                             },
                             color: {
                                 xs: "black",
@@ -105,108 +110,20 @@ export const MainHeaderComponent : FC<{}> = () =>
                             fontSize: {
                                 xs: 18,
                                 sm: 20,
-                                xl: "25px"
+                                xl: "22px"
                             },
                             color: {
                                 xs: "black",
                                 md: "white"
                             },
+                            fontWeight: {
+                                xs: "350",
+                                md: "400",
+                            },
                             fontStyle: "italic"
                         }}>
-                            Webová stránka plná funkcí, které usnadní a zpestří vaše cesty. 
+                            Pro motorkáře, kteří milují cestování na svých strojích, přichází nová webová stránka <br/> plná funkcí, které zpestří vaše cestování. Tato stránka je pro všechny motorkáře, <br/> kteří chtějí víc než jen jezdit, je to pro ty, kteří chtějí prožít cestování naplno. 
                         </Typography>
-
-                        {/*Main-header__list*/}
-                        <Box> 
-                            <ListItem sx={{
-                                display: "list-item", 
-                                fontWeight: "700", 
-                                fontSize: {
-                                    xs: "16px",
-                                    lg: "18px",
-                                    xl: "20px"
-                                },
-                                color: {
-                                    xs: "black",
-                                    md: "white",
-                                },
-                                marginBottom: {
-                                    xs: "10px",
-                                    md: "0"
-                                }
-                            }}
-                                
-                                
-                                disablePadding> 
-                                Možnost sledovat své přátele na živé mapě
-                            </ListItem>
-
-                            <ListItem sx={{
-                                display: "list-item", 
-                                fontWeight: "700", 
-                                fontSize: {
-                                    xs: "16px",
-                                    lg: "18px",
-                                    xl: "20px"
-                                },
-                                color: {
-                                    xs: "black",
-                                    md: "white",
-                                }, 
-                                marginBottom: {
-                                    xs: "10px",
-                                    md: "0"
-                                }
-                            }}
-                                disablePadding> 
-                            <Box component="span" sx={{color: "secondary.main", fontWeight: "700"}}> Zaznamenávej </Box> své trasy a sdílej je s ostatními motorkáři
-                            </ListItem>
-
-                            <ListItem sx={{
-                                display: "list-item", 
-                                fontWeight: "700", 
-                                fontSize: {
-                                    xs: "16px",
-                                    lg: "18px",
-                                    xl: "20px"
-                                },
-                                color: {
-                                    xs: "black",
-                                    md: "white",
-                                }, 
-                                marginBottom: {
-                                    xs: "16px",
-                                    md: "0"
-                                }
-                            }} 
-                                disablePadding> 
-                                Přidávej si nové přátele a sdílej své zážitky z cest
-                            </ListItem>
-
-                            <ListItem sx={{
-                                display: "list-item", 
-                                fontWeight: "700", 
-                                fontSize: {
-                                    xs: "16px",
-                                    lg: "18px",
-                                    xl: "20px"
-                                }, 
-                                color: {
-                                    xs: "black",
-                                    md: "white",
-                                }, 
-                                marginBottom: {
-                                    xs: "10px",
-                                    md: "0"
-                                }
-                            }}
-                                
-                                disablePadding> 
-                                Zpestři své cestování na motorkách a <Box component="span" sx={{color: "secondary.main", fontWeight: "700"}}> užij si každou chvilku. </Box>
-                            </ListItem>
-                        </Box>
-                        
-
 
 
                         {/*Main-header__link*/}
@@ -214,7 +131,6 @@ export const MainHeaderComponent : FC<{}> = () =>
                         <Link href="/" sx={{
                             border: {
                                 xs: "1px solid black",
-                                md: "1px solid #FFF",
                             },
                             color: {
                                 xs: "black",
@@ -228,10 +144,11 @@ export const MainHeaderComponent : FC<{}> = () =>
                             padding: "10px 10px 10px 5px",
                             transition: "0.3s ease-out",
                             display: "flex",
+                            backgroundColor: "#E22222",
                             justifyContent: "center",
                             alignContent: "center",
                             textDecoration: "none",
-                            "&:hover": {background: "#FF0000"}
+                            "&:hover": {border: "1px solid #FFF"}
                         }}>
                             <CreateIcon sx={{marginRight:"8px", marginTop: "2px", fontSize:"20px", color: {
                                 xs: "black",
@@ -240,77 +157,6 @@ export const MainHeaderComponent : FC<{}> = () =>
                         ZAREGISTROVAT SE
                         </Link>
 
-
-                    
-
-
-                    </Box>
-
-                        {/* Main-header__download-container */}
-                    
-                    <Box 
-                    sx={{
-                        position: {
-                        xs: "relative",
-                        medium: "absolute",
-                        }, 
-                    maxWidth: "930px", 
-                    padding: {
-                        xs: "30px 0 20px 0",
-                        md: "25px 25px 20px 25px",
-                    },
-                    backgroundColor: "#fff",
-                    display: "flex", 
-                    flexDirection: {
-                        xs: "column",
-                        md: "row"
-                    },
-                    justifyContent: "space-between", 
-                    left: {
-                        xs: "0",
-                        md: "50%"
-                    }, 
-                    bottom: "0", 
-                    transform: {
-                        xs: "none",
-                        md: "translateX(-50%)"
-                    }, 
-                    width: "100%"
-                    }}> 
-
-                        {/*Container - left side*/}
-                        <Box>
-                            <Typography variant="h3" sx={{
-                                fontSize: {
-                                xs: 20,
-                            },
-                            color: "black",
-                            fontWeight: "700"
-                            }}> Stáhni si aplikaci do telefonu </Typography>
-
-                            <Typography sx={{color:"black", paddingBottom: {xs: "10px", md: "0"}}}>
-                                <Box component="span" sx={{color: "secondary.main", }}>Doporučováno</Box>, umožnuje záznam a publikaci tras
-                            </Typography>
-                        </Box>
-
-                        {/*Container - right side*/}
-                        <Box sx={{
-                            display: "flex",
-                            gap: {xs: "10px", md: "40px"},
-                        }}>
-
-                            <Link href="/">
-                                <Box component="img" src="/images/others/android.png" sx={{maxWidth: "170px", maxHeight: "60px", height: "100%", width:"100%", display: "block"}} >
-                                </Box>
-                            </Link>
-                                
-                            <Link href="/">
-                                <Box component="img" src="/images/others/ios.png" sx={{maxWidth: "170px", maxHeight: "60px", height: "100%", width:"100%", display: "block"}} >
-                                </Box>
-                            </Link>
-                            
-
-                        </Box>
                     </Box>
                     
                 </Container>    
@@ -319,3 +165,4 @@ export const MainHeaderComponent : FC<{}> = () =>
         
     )
 }
+
