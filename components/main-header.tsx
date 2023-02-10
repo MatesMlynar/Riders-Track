@@ -18,13 +18,12 @@ export const MainHeaderComponent : FC<{}> = () =>
             <Box sx={{
                 padding: {
                     md: "250px 48px 0 48px",
-                    lg: "300px 48px 0 48px",
+                    lg: "280px 48px 0 48px",
                 },
                 position: "relative",
                 height: {
                     xs: "auto",
-                    md: "50vh",
-                    lg: "95%",
+                    md: "100%",
                 }
             }}>
                 {/* Main-header__figure */}
@@ -33,6 +32,7 @@ export const MainHeaderComponent : FC<{}> = () =>
                         xs: 'relative',
                         md: 'absolute',
                     },
+                    height: {xs: "55vh", sm: "auto"},
                     top: {
                         md: "0",
                     },
@@ -46,7 +46,7 @@ export const MainHeaderComponent : FC<{}> = () =>
                         md: "0",
                     },
                     paddingTop: {
-                        xs: "110px",
+                        xs: "90px",
                     },
                     marginBottom: {
                         xs: "30px",
@@ -57,7 +57,7 @@ export const MainHeaderComponent : FC<{}> = () =>
                 }}>
 
                         {/*Main-header__image*/}
-                        <Box src="/images/background/background_dark.png" component="img" 
+                        <Box src="/images/background/background_panigale.png" component="img" 
                         sx={{
                             width: "100%",
                             height: "100%",
@@ -93,7 +93,7 @@ export const MainHeaderComponent : FC<{}> = () =>
                         <Typography variant='h1' sx={{
                             fontSize: {
                                 xs: 22,
-                                sm: 33,
+                                sm: 28,
                                 xl: 42
                             },
                             color: {

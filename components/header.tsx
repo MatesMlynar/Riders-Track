@@ -13,7 +13,7 @@ export const HeaderComponent = () => {
     return(
         //header
         <AppBar position='fixed' sx={{
-            height: "110px",
+            height: "90px",
             backgroundColor: "white", 
             display: "flex", 
             justifyContent: "center" 
