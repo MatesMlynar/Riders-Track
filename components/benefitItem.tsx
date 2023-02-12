@@ -12,7 +12,7 @@ export const BenefitItem : FC<PropsWithChildren<Props>> = (props) => {
     return(
 
         <>
-            <Paper elevation={6} 
+            <Paper elevation={10} 
             sx={{
                 display: "flex",
                 padding: "20px",

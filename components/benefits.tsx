@@ -98,6 +98,21 @@ export const BenefitsComponent : FC<{}> = () => {
 
                         </Grid>
 
+                        {/* Right side - bottom*/}
+                        <Box sx={{
+                            display: "flex",
+                            justifyContent: "center",
+                            marginTop: "40px",
+                            gap: "30px",
+                            flexWrap: "wrap"
+                        }}>
+
+                            <Box component="img" src="/images/others/android.png" sx={{maxWidth: "200px", width: "100%", height: "65px", objectFit: "cover"}}/> 
+                            <Box component="img" src="/images/others/ios.png" sx={{maxWidth: "200px", width: "100%", height: "65px", objectFit: "cover"}}/>
+
+
+                        </Box>
+
 
                     </Box>
 

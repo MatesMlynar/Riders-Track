@@ -24,7 +24,7 @@ export const MainHeaderComponent : FC<{}> = () =>
                 height: {
                     xs: "auto",
                     md: "100%",
-                }
+                },
             }}>
                 {/* Main-header__figure */}
                 <Box sx={{
@@ -32,7 +32,7 @@ export const MainHeaderComponent : FC<{}> = () =>
                         xs: 'relative',
                         md: 'absolute',
                     },
-                    height: {xs: "55vh", sm: "auto"},
+                    height: {xs: "44vh", sm: "auto"},
                     top: {
                         md: "0",
                     },
@@ -53,6 +53,7 @@ export const MainHeaderComponent : FC<{}> = () =>
                         md: "0",
                     },
                     
+                    
 
                 }}>
 
@@ -62,7 +63,7 @@ export const MainHeaderComponent : FC<{}> = () =>
                             width: "100%",
                             height: "100%",
                             objectFit: "cover",
-                            display: "block"
+                            display: "block",
                         }}>
                         </Box>
                 </Box>
