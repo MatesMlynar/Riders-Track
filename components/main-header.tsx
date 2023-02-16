@@ -3,6 +3,7 @@ import CreateIcon from '@mui/icons-material/Create';
 import { ChangeEventHandler, FC} from "react";
 import NextLink from 'next/link'
 import { useState, useEffect } from 'react';
+import { usePeopleQuery } from './../generated/graphql';
 
 export const MainHeaderComponent : FC<{}> = () => 
 {
@@ -11,6 +12,8 @@ export const MainHeaderComponent : FC<{}> = () =>
     useEffect(() => {
         setVisible(true);
     }, [setVisible])
+
+    const {data, loading, error} = usePeopleQuery();
 
 
     {/*Main-header*/}

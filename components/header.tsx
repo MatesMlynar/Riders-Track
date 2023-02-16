@@ -7,8 +7,6 @@ import Link from '@mui/material/Link';
 import { useState, useEffect } from 'react';
 
 
-
-
 export const HeaderComponent = () => {
     return(
         //header

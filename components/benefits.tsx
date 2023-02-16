@@ -107,6 +107,7 @@ export const BenefitsComponent : FC<{}> = () => {
                             flexWrap: "wrap"
                         }}>
 
+                            {/*TODO - add links*/}
                             <Box component="img" src="/images/others/android.png" sx={{maxWidth: "200px", width: "100%", height: "65px", objectFit: "cover"}}/> 
                             <Box component="img" src="/images/others/ios.png" sx={{maxWidth: "200px", width: "100%", height: "65px", objectFit: "cover"}}/>
 

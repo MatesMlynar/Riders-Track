@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import createEmotionServer from '@emotion/server/create-instance';
-
+import { getApolloClient } from '../utility/apollo-client';
 import createEmotionCache from '../utility/createEmotionCache';
 
 export default class MyDocument extends Document {
@@ -64,10 +64,11 @@ MyDocument.getInitialProps = async (ctx) => {
   /* eslint-enable */
 
   const initialProps = await Document.getInitialProps(ctx);
-  // This is important. It prevents emotion to render invalid HTML.
-  // See httpimport { *asApollo } from '@apollo/client';
-s://github.com/mui-org/material-ui/issues/26561#issuecomment-855286153
-  const apolloClient = getApolloClient({ forceNew: true });
+  // This is important. It prevents emotion to render invalid HTML 
+// See https://github.com/mui-org/material-ui/issues/26561#issuecomment-855286153
+
+  const apolloClient = getApolloClient({forceNew: true}) 
+
   const emotionStyles = extractCriticalToChunks(initialProps.html);
   const emotionStyleTags = emotionStyles.styles.map((style) => (
     <style
@@ -78,6 +79,8 @@ s://github.com/mui-org/material-ui/issues/26561#issuecomment-855286153
     />
   ));
 
+const apolloState = apolloClient.extract();
+
   return {
     ...initialProps,
     // Styles fragment is rendered after the app and page rendering finish.
@@ -85,5 +88,6 @@ s://github.com/mui-org/material-ui/issues/26561#issuecomment-855286153
       ...React.Children.toArray(initialProps.styles),
       ...emotionStyleTags,
     ],
+    apolloState
   };
 };
