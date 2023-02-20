@@ -2,11 +2,6 @@ query people {
   users {
     name
   }
-  githubUsers {
-    id
-    login
-    avatarUrl
-  }
 }
 
 #query documents ($typeFilter: [DocumentType!]) {

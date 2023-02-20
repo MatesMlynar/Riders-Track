@@ -3,7 +3,9 @@ import CreateIcon from '@mui/icons-material/Create';
 import { ChangeEventHandler, FC} from "react";
 import NextLink from 'next/link'
 import { useState, useEffect } from 'react';
-import { usePeopleQuery } from './../generated/graphql';
+import { usePeopleQuery, useMotoStatsQuery } from './../generated/graphql';
+
+
 
 export const MainHeaderComponent : FC<{}> = () => 
 {
@@ -13,11 +15,12 @@ export const MainHeaderComponent : FC<{}> = () =>
         setVisible(true);
     }, [setVisible])
 
-    const {data, loading, error} = usePeopleQuery();
-
+    const {data, loading, error} = useMotoStatsQuery();
+    console.log(data);
 
     {/*Main-header*/}
     return(
+
             <Box sx={{
                 padding: {
                     md: "250px 48px 0 48px",

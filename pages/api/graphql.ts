@@ -6,6 +6,7 @@ const typeDefs = gql`
   type Query {
     users: [User!]!
     githubUsers: [GithubUser!]!
+    motoStats: [MotoStats!]
   }
   type User {
     name: String
@@ -14,6 +15,11 @@ const typeDefs = gql`
     id: ID!
     login: String!
     avatarUrl: String!
+  }
+  type MotoStats {
+    topSpeed: Int!
+    timeSpend: String!
+    totalDistance: Int!    
   }
 `
 
@@ -34,7 +40,11 @@ const resolvers = {
           throw error;
         }
       },
+    motoStats: () => {
+      return [{topSpeed: 205, timeSpend: "131", totalDistance: 384}]
+    }
   },
+ 
 }
 
 const schema = createSchema({

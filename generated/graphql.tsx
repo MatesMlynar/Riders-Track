@@ -22,9 +22,17 @@ export type GithubUser = {
   login: Scalars['String'];
 };
 
+export type MotoStats = {
+  __typename?: 'MotoStats';
+  timeSpend: Scalars['String'];
+  topSpeed: Scalars['Int'];
+  totalDistance: Scalars['Int'];
+};
+
 export type Query = {
   __typename?: 'Query';
   githubUsers: Array<GithubUser>;
+  motoStats?: Maybe<Array<MotoStats>>;
   users: Array<User>;
 };
 
@@ -36,18 +44,18 @@ export type User = {
 export type PeopleQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type PeopleQuery = { __typename?: 'Query', users: Array<{ __typename?: 'User', name?: string | null }>, githubUsers: Array<{ __typename?: 'GithubUser', id: string, login: string, avatarUrl: string }> };
+export type PeopleQuery = { __typename?: 'Query', users: Array<{ __typename?: 'User', name?: string | null }> };
+
+export type MotoStatsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type MotoStatsQuery = { __typename?: 'Query', motoStats?: Array<{ __typename?: 'MotoStats', topSpeed: number, timeSpend: string, totalDistance: number }> | null };
 
 
 export const PeopleDocument = gql`
     query people {
   users {
     name
-  }
-  githubUsers {
-    id
-    login
-    avatarUrl
   }
 }
     `;
@@ -78,3 +86,39 @@ export function usePeopleLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<Peo
 export type PeopleQueryHookResult = ReturnType<typeof usePeopleQuery>;
 export type PeopleLazyQueryHookResult = ReturnType<typeof usePeopleLazyQuery>;
 export type PeopleQueryResult = Apollo.QueryResult<PeopleQuery, PeopleQueryVariables>;
+export const MotoStatsDocument = gql`
+    query motoStats {
+  motoStats {
+    topSpeed
+    timeSpend
+    totalDistance
+  }
+}
+    `;
+
+/**
+ * __useMotoStatsQuery__
+ *
+ * To run a query within a React component, call `useMotoStatsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useMotoStatsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useMotoStatsQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useMotoStatsQuery(baseOptions?: Apollo.QueryHookOptions<MotoStatsQuery, MotoStatsQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<MotoStatsQuery, MotoStatsQueryVariables>(MotoStatsDocument, options);
+      }
+export function useMotoStatsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<MotoStatsQuery, MotoStatsQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<MotoStatsQuery, MotoStatsQueryVariables>(MotoStatsDocument, options);
+        }
+export type MotoStatsQueryHookResult = ReturnType<typeof useMotoStatsQuery>;
+export type MotoStatsLazyQueryHookResult = ReturnType<typeof useMotoStatsLazyQuery>;
+export type MotoStatsQueryResult = Apollo.QueryResult<MotoStatsQuery, MotoStatsQueryVariables>;
