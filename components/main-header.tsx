@@ -135,7 +135,7 @@ export const MainHeaderComponent : FC<{}> = () =>
 
                         {/*Main-header__link*/}
 
-                        <Link href="/" sx={{
+                        <Link href="/" component={NextLink} sx={{
                             border: {
                                 xs: "1px solid black",
                             },
@@ -156,7 +156,9 @@ export const MainHeaderComponent : FC<{}> = () =>
                             alignContent: "center",
                             textDecoration: "none",
                             "&:hover": {border: "1px solid #FFF"}
-                        }}>
+                            
+                        }}
+                        >
                             <CreateIcon sx={{marginRight:"8px", marginTop: "2px", fontSize:"20px", color: {
                                 xs: "black",
                                 md: "white",

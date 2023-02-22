@@ -27,7 +27,7 @@ export const HeaderComponent = () => {
                     }}>
 
                     {/*header logo*/}
-                    <Link href="/">
+                    <Link href="/" component={NextLink}>
                         <Box
                             component="img"
                             alt="Logo webové stránky"

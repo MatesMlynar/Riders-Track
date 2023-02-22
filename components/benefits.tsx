@@ -5,6 +5,7 @@ import EditLocationAltIcon from '@mui/icons-material/EditLocationAlt';
 import MapIcon from '@mui/icons-material/Map';
 import PeopleIcon from '@mui/icons-material/People';
 import SentimentVerySatisfiedSharpIcon from '@mui/icons-material/SentimentVerySatisfiedSharp';
+import NextLink from 'next/link'
 
 
 export const BenefitsComponent : FC<{}> = () => {
@@ -108,9 +109,11 @@ export const BenefitsComponent : FC<{}> = () => {
                         }}>
 
                             {/*TODO - add links*/}
+                            
                             <Box component="img" src="/images/others/android.png" sx={{maxWidth: "200px", width: "100%", height: "65px", objectFit: "cover"}}/> 
-                            <Box component="img" src="/images/others/ios.png" sx={{maxWidth: "200px", width: "100%", height: "65px", objectFit: "cover"}}/>
-
+                        
+                            <Box component="img" src="/images/others/ios.png" sx={{maxWidth: "200px", width: "100%", height: "65px", objectFit: "cover"}}/> 
+                            
 
                         </Box>
 
