@@ -32,7 +32,7 @@ export type MotoStats = {
 export type Query = {
   __typename?: 'Query';
   githubUsers: Array<GithubUser>;
-  motoStats?: Maybe<Array<MotoStats>>;
+  motoStats: Array<MotoStats>;
   users: Array<User>;
 };
 
@@ -49,7 +49,7 @@ export type PeopleQuery = { __typename?: 'Query', users: Array<{ __typename?: 'U
 export type MotoStatsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type MotoStatsQuery = { __typename?: 'Query', motoStats?: Array<{ __typename?: 'MotoStats', topSpeed: number, timeSpend: string, totalDistance: number }> | null };
+export type MotoStatsQuery = { __typename?: 'Query', motoStats: Array<{ __typename?: 'MotoStats', topSpeed: number, timeSpend: string, totalDistance: number }> };
 
 
 export const PeopleDocument = gql`

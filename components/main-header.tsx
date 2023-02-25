@@ -16,7 +16,10 @@ export const MainHeaderComponent : FC<{}> = () =>
     }, [setVisible])
 
     const {data, loading, error} = useMotoStatsQuery();
-    console.log(data);
+    if(data)
+    {
+        console.log(data?.motoStats[0].topSpeed)
+    }
 
     {/*Main-header*/}
     return(
@@ -163,7 +166,7 @@ export const MainHeaderComponent : FC<{}> = () =>
                                 xs: "black",
                                 md: "white",
                             }}} /> 
-                        ZAREGISTROVAT SE
+                        VYTVOŘIT SI ÚČET
                         </Link>
 
                     </Box>

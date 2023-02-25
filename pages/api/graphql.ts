@@ -6,7 +6,7 @@ const typeDefs = gql`
   type Query {
     users: [User!]!
     githubUsers: [GithubUser!]!
-    motoStats: [MotoStats!]
+    motoStats: [MotoStats!]!
   }
   type User {
     name: String
