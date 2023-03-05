@@ -10,6 +10,10 @@ export const DashboardShape : FC<{}> = () => {
             alt="Logo dashboard stránky"
             sx ={{
                 maxHeight: "100%",
+                display: {
+                    xs: "none", 
+                    lg: "block",
+                }
             }}
             src="/images/background/DashboardShape.png"
         />

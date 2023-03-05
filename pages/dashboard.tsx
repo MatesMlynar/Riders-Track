@@ -5,9 +5,6 @@ import {Box} from '@mui/material';
 import {NextPage} from "next";
 
 
-
-
-
 const dashboard : NextPage = () => {
     return(
         <>
@@ -16,7 +13,7 @@ const dashboard : NextPage = () => {
                 justifyContent: "space-between", 
                 width: "100%", 
                 height: "100%",
-                backgroundColor: "#F9F6F6"
+                overflowY: "hidden"
             }}>
 
                 {/*Dashboard -- left side (navigation)*/}

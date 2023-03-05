@@ -20,7 +20,7 @@ export const DashboardNavigation : FC<{}> = () => {
             background: "linear-gradient(to bottom,#D60909, #FF7700)",
             display: "flex",
             flexDirection: "column",
-            alignItems: "center"
+            alignItems: "center",
         }}>
             {/*navigation container*/}
 
