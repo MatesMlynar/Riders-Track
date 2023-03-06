@@ -56,7 +56,11 @@ export const DashboardRideItem : FC<Props> = (props) => {
                         lg: "150px",
                         xl: "200px"
                     },
-                    height: "100%",
+                    height: {
+                        xs: "45vw",
+                        sm: "auto",
+                        lg: "100%",
+                    },
                     objectFit: "cover",
                     borderRadius: "10% 10% 0 0",
                     transition: "0.3s ease-out",
@@ -148,9 +152,16 @@ export const DashboardRideItem : FC<Props> = (props) => {
                 </Box>
 
                 {/*Content__bottom-button*/}
-                <Box sx={{borderTop: "1px solid black", width: "100%", padding: "15px 40px"}}>
-
-                    <Link href="/dashboard" component={NextLink} sx={{textDecoration: "none", color: "black",width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between"}}>
+                <Box 
+                    sx={{
+                        borderTop: "1px solid black",
+                        width: "100%",
+                        padding: "15px 40px",
+                        color: "black",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "space-between",
+                        }}>
 
                         <Typography variant="h3" 
                                 sx={{
@@ -159,11 +170,8 @@ export const DashboardRideItem : FC<Props> = (props) => {
                                 }}>
                                 PŘEJÍT NA DETAIL
                         </Typography>
-                            <ChevronRightIcon sx={{color: "#4364F7"}}/>
 
-                        
-                    </Link>
-
+                        <ChevronRightIcon sx={{color: "#4364F7"}}/>
                     
                 </Box>
 

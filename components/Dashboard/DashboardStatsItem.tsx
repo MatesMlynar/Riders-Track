@@ -64,7 +64,7 @@ export const DashboardStatsItem : FC<Props> = (props) => {
                 display: "flex", 
                 alignItems: "center", 
                 gap: {
-                    xs: "5px",
+                    xs: "15px",
                     lg: "5px",
                     xl: "10px"
                 },

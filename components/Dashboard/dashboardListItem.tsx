@@ -6,15 +6,16 @@ import NextLink from 'next/link'
 
 type Props = {
     icon: React.ReactNode;
+    color?: string;
 }
 
 export const DashboardListItem : FC<PropsWithChildren<Props>> = (props) => { 
 
-    const {children, icon} = props;
+    const {children, icon, color} = props;
 
     return(
         <>
-            <Link href="/dashboard" component={NextLink} sx={{textDecoration: "none", color: "white"}}> 
+            <Link href="/dashboard" component={NextLink} sx={{textDecoration: "none", color: {color}}}> 
                 <ListItem disablePadding>
                         <ListItemButton> 
                             <ListItemIcon>

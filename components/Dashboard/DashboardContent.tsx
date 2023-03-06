@@ -12,7 +12,7 @@ export const DashboardContent : FC<{}> = () => {
     return(
         <>
             <Box sx={{padding: {
-                xs: "50px 30px",
+                xs: "60px 30px",
                 lg: "50px 100px",
                 xl: "80px 150px",
                 height: "100%",
@@ -26,7 +26,11 @@ export const DashboardContent : FC<{}> = () => {
                         marginBottom: "25px",
                         textAlign: {
                             xs: "center",
-                            md: "left",
+                            
+                        },
+                        fontWeight: {
+                            xs: "500",
+                            md: "400"
                         }
                     }}>
                         DASHBOARD
@@ -43,11 +47,15 @@ export const DashboardContent : FC<{}> = () => {
                             xl: "60px"
                         },
                         marginBottom: {
-                            md: "30px",
+                            xs: "30px",
                             lg: "60px",
                             
                         },
-                        flexWrap: "wrap"
+                        flexWrap: "wrap",
+                        justifyContent: {
+                            xs: "center", 
+                           
+                        }
                     }}> 
 
 
@@ -73,12 +81,19 @@ export const DashboardContent : FC<{}> = () => {
                 }}>
 
                     <Typography variant="h2" sx={{
-                        fontSize: "40px",
+                        fontSize: {
+                            xs: "25px",
+                            md: "40px"
+                        },
                         color: "#0052D4",
                         marginBottom: "25px",
                         textAlign: {
                             xs: "center",
-                            md: "left",
+                           
+                        },
+                        fontWeight: {
+                            xs: "500",
+                            md: "400"
                         }
                     }}>
                         Poohlédnutí se po mých cestách
@@ -96,11 +111,17 @@ export const DashboardContent : FC<{}> = () => {
                             xl: "480px",
                         },
                         height: "100%",
-                        overflowY: "scroll",
+                        overflowY: {
+                            lg: "scroll"
+                        },
                         paddingBottom: {
                             xs: "180px",
                             xl: "195px",
                         },
+                        justifyContent: {
+                            xs: "center", 
+                           
+                        }
                     }}> 
 
                         <DashboardRideItem title={"S kamarády až do Rumunska"} date={"25.6. 2022 - 5.7.2022"} maxSpeed={102} totalDistance={680.3} href={"#"}/>

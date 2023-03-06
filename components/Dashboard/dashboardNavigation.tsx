@@ -1,5 +1,6 @@
 import {Box, Container, Typography, ListItem, Button, Link, List, ListItemButton, ListItemIcon, ListItemText} from '@mui/material'; 
 import {FC} from "react";
+
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import ForumIcon from '@mui/icons-material/Forum';
 import MapIcon from '@mui/icons-material/Map';
@@ -10,6 +11,7 @@ import { DashboardListItem } from './dashboardListItem';
 
 export const DashboardNavigation : FC<{}> = () => {
 
+
     return(
 
         <Box sx={{
@@ -18,9 +20,12 @@ export const DashboardNavigation : FC<{}> = () => {
             width: "100%",
             height: "100%",
             background: "linear-gradient(to bottom,#D60909, #FF7700)",
-            display: "flex",
-            flexDirection: "column",
             alignItems: "center",
+            display: {
+                xs: "none",
+                lg: "flex",
+            },
+            flexDirection: "column",
         }}>
             {/*navigation container*/}
 
@@ -52,17 +57,17 @@ export const DashboardNavigation : FC<{}> = () => {
                 {/*TODO - dodelat odkazy a posilat dynamicke jmeno*/}
                 {/*Navigation list*/}
                 <List> 
-                    <DashboardListItem icon={<DashboardIcon sx={{color: "white", width: "27px", height: "27px"}}/>} children={"Dashboard"}/>
-                    <DashboardListItem icon={<ForumIcon sx={{color: "white", width: "27px", height: "27px"}}/>} children={"Chat"}/>
-                    <DashboardListItem icon={<MapIcon sx={{color: "white", width: "27px", height: "27px"}}/>} children={"Živá mapa"}/>
+                    <DashboardListItem color="white" icon={<DashboardIcon sx={{color: "white", width: "27px", height: "27px"}}/>} children={"Dashboard"}/>
+                    <DashboardListItem color="white" icon={<ForumIcon sx={{color: "white", width: "27px", height: "27px"}}/>} children={"Chat"}/>
+                    <DashboardListItem color="white" icon={<MapIcon sx={{color: "white", width: "27px", height: "27px"}}/>} children={"Živá mapa"}/>
                 </List>
 
 
                 {/*extra settings*/}
 
                 <List> 
-                    <DashboardListItem icon={<AccountBoxIcon sx={{color: "white", width: "27px", height: "27px"}}/>} children={"Matěj Mlynář"}/>
-                    <DashboardListItem icon={<SettingsIcon sx={{color: "white", width: "27px", height: "27px"}}/>} children={"Nastavení"}/>
+                    <DashboardListItem color="white" icon={<AccountBoxIcon sx={{color: "white", width: "27px", height: "27px"}}/>} children={"Matěj Mlynář"}/>
+                    <DashboardListItem color="white" icon={<SettingsIcon sx={{color: "white", width: "27px", height: "27px"}}/>} children={"Nastavení"}/>
                 </List>
 
 
